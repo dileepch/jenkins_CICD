@@ -3,7 +3,7 @@ pipeline{
         label "node"
     }
     stages{
-        stage("A"){
+        stage("Build"){
             steps{
                 sh 'sleep 5'
                 echo "========executing A========"
@@ -13,8 +13,28 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                ls
+                ls -lrt
                 sleep 5
+                '''
+                echo "========executing A========"
+            }
+        }
+         stage("Test1"){
+            steps{
+                sh '''
+                #!/bin/bash
+                ls -lrt
+                sleep 10
+                '''
+                echo "========executing A========"
+            }
+        }
+         stage("Test2"){
+            steps{
+                sh '''
+                #!/bin/bash
+                ls -lrt
+                sleep 15
                 '''
                 echo "========executing A========"
             }

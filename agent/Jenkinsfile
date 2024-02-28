@@ -9,6 +9,9 @@ pipeline{
     parameters {
         
     }
+    triggers {
+        cron('*/59 * * * *')
+    }
     stages{
         stage("Build"){
             steps{
